@@ -20,6 +20,9 @@ import functools
 
 
 def main():
+    print(decodeString(['1 2', '3 4']))
+
+
     arr = []
     N = int(input())
     ReadN(N, arr)
@@ -43,11 +46,15 @@ def SumOfSquares(arr):
 def SquareNumber(num):
     if num > 0:
         return num*num
-        
+
+def decodeString(arr):
+    decodedStr = list(map(lambda x: x.split(' '), arr)) #returns [['1', '2'], ['3', '4']]
+    #return list(map(int, decodedStr))
+
+
 #TODO:
 #implement decoding function that would pare strings of integers into a list of integers 
 #implement output function 
 if __name__ == "__main__":
     main()
     
-
