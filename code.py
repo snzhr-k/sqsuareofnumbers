@@ -23,11 +23,11 @@ def main():
     print(decodeString(['1 2', '3 4']))
 
 
-    arr = []
-    N = int(input())
-    ReadN(N, arr)
-    print(arr)
-    print(SumOfSquares(arr))
+    # arr = []
+    # N = int(input())
+    # ReadN(N, arr)
+    # print(arr)
+    # print(SumOfSquares(arr))
 
 def ReadN(N, arr): #reads # of test cases
     if N == 0:
@@ -48,8 +48,14 @@ def SquareNumber(num):
         return num*num
 
 def decodeString(arr):
-    decodedStr = list(map(lambda x: x.split(' '), arr)) #returns [['1', '2'], ['3', '4']]
-    #return list(map(int, decodedStr))
+    # Split each string in arr: ["1 2", "3 4"] → [["1", "2"], ["3", "4"]]
+    split_strs = list(map(lambda x: x.split(' '), arr))
+    
+    # Convert each inner string to an int → [[1, 2], [3, 4]]
+    int_lists = list(map(lambda lst: list(map(int, lst)), split_strs))
+    
+    return int_lists
+
 
 
 #TODO:
