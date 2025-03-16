@@ -19,15 +19,7 @@ import sys
 import functools 
 
 
-def main():
-    print(decodeString(['1 2', '3 4']))
 
-
-    # arr = []
-    # N = int(input())
-    # ReadN(N, arr)
-    # print(arr)
-    # print(SumOfSquares(arr))
 
 def ReadN(N, arr): #reads # of test cases
     if N == 0:
@@ -38,6 +30,8 @@ def ReadN(N, arr): #reads # of test cases
 
 def ReadX(X, intarr): #reads # of integers and line of integers
     return intarr.append(input())
+
+
 
 def SumOfSquares(arr):
     #Implement decoding (parsing) '1 2' strings into nubmers 
@@ -57,10 +51,18 @@ def decodeString(arr):
     return int_lists
 
 
+def main():
+    arr = []
+    N = int(input())
+    ReadN(N, arr)
+    print(arr)
+    print(SumOfSquares(arr))
 
 #TODO:
 #implement decoding function that would pare strings of integers into a list of integers 
 #implement output function 
 if __name__ == "__main__":
     main()
+
+
     
