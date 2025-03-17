@@ -15,12 +15,7 @@
 # # Do not use any for loop, while loop, or any list / set / dictionary comprehension
 # # Your solution will be tested against Python 3.13 (as of January 2025) or higher
 
-# import sys
-# import functools 
-
-
-
-
+#Implementation of the feature that reads inputs
 def ReadN(N, arr): #reads # of test cases
     if N == 0:
         return arr
@@ -31,8 +26,7 @@ def ReadN(N, arr): #reads # of test cases
 def ReadX(X, intarr): #reads # of integers and line of integers
     return intarr.append(input())
 
-
-
+#TODO: Implementation of the feature that calculates the sum of squares of a given list of integers
 def SumOfSquares(arr):
     #Implement decoding (parsing) '1 2' strings into nubmers 
     return list(map(SquareNumber, arr))
@@ -41,6 +35,7 @@ def SquareNumber(num):
     if num > 0:
         return num*num
 
+#Implementation of the feature that parses string lists into integer lists
 def decodeString(arr):
     # Split each string in arr: ["1 2", "3 4"] → [["1", "2"], ["3", "4"]]
     split_strs = list(map(lambda x: x.split(' '), arr))
@@ -50,7 +45,7 @@ def decodeString(arr):
     
     return int_lists
 
-
+#Initializing functions and variables
 def main():
     arr = []
     N = int(input())
@@ -58,9 +53,6 @@ def main():
     print(arr)
     print(SumOfSquares(arr))
 
-#TODO:
-#implement decoding function that would pare strings of integers into a list of integers 
-#implement output function 
 if __name__ == "__main__":
     main()
 
