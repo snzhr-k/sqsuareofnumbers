@@ -26,12 +26,10 @@ def ReadN(N, arr): #reads # of test cases
 def ReadX(X, intarr): #reads # of integers and line of integers
     return intarr.append(input())
 
-#TODO: Implementation of the feature that calculates the sum of squares of a given list of integers
-def SumOfSquares(listInts): #listInts - is a list of a list of integer elemts
-    #gets lsit of List of integers e.g. [[1,2,3],[1,2]]
-    list_of_squares = list(map(SquareNumber, listInts)) #collects the sum of squares of each line of integers
-    
-    return list(map(sum, list_of_squares))
+#Implementation of the feature that calculates the sum of squares of a given list of integers
+def SumOfSquares(arr):
+    #Implement decoding (parsing) '1 2' strings into nubmers 
+    return list(map(SquareNumber, arr))
 
 def SquareNumber(Ints): #Ints is a list of integer elements
     #caluclates sum of squares for one line of integers
@@ -49,7 +47,7 @@ def decodeString(arr):
     
     return int_lists
 
-#Initializing functions and variables
+#Initializing and testing functions
 def main():
     arr = []
     N = int(input())
