@@ -27,13 +27,17 @@ def ReadX(X, intarr): #reads # of integers and line of integers
     return intarr.append(input())
 
 #TODO: Implementation of the feature that calculates the sum of squares of a given list of integers
-def SumOfSquares(arr):
-    #Implement decoding (parsing) '1 2' strings into nubmers 
-    return list(map(SquareNumber, arr))
+def SumOfSquares(listInts): #listInts - is a list of a list of integer elemts
+    #gets lsit of List of integers e.g. [[1,2,3],[1,2]]
+    list_of_squares = list(map(SquareNumber, listInts)) #collects the sum of squares of each line of integers
+    
+    return list(map(sum, list_of_squares))
 
-def SquareNumber(num):
-    if num > 0:
-        return num*num
+def SquareNumber(Ints): #Ints is a list of integer elements
+    #caluclates sum of squares for one line of integers
+    squaredInts = list(map(lambda x: x*x, Ints))
+    return squaredInts
+    
 
 #Implementation of the feature that parses string lists into integer lists
 def decodeString(arr):
@@ -50,8 +54,8 @@ def main():
     arr = []
     N = int(input())
     ReadN(N, arr)
-    print(arr)
-    print(SumOfSquares(arr))
+    decoded = decodeString(arr)
+    print(SumOfSquares(decoded))
 
 if __name__ == "__main__":
     main()
