@@ -33,7 +33,8 @@ def SumOfSquares(arr):
 
 def SquareNumber(Ints): #Ints is a list of integer elements
     #caluclates sum of squares for one line of integers
-    squaredInts = list(map(lambda x: x*x, Ints))
+    squaredInts = list(map(lambda x: x*x if x>0 else 0, Ints))
+
     return squaredInts
     
 
