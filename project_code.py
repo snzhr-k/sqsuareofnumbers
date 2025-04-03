@@ -28,12 +28,12 @@ def ReadX(X, intarr): #reads # of integers and line of integers
 
 #Implementation of the feature that calculates the sum of squares of a given list of integers
 def SumOfSquares(arr):
-    #Implement decoding (parsing) '1 2' strings into nubmers 
     return list(map(SquareNumber, arr))
 
 def SquareNumber(Ints): #Ints is a list of integer elements
     #caluclates sum of squares for one line of integers
-    squaredInts = list(map(lambda x: x*x if x>0 else 0, Ints))
+    filteredInts = list(filter(lambda x: x>0, Ints)) #filtering neagative numbers
+    squaredInts = list(map(lambda x: x*x, filteredInts))
 
     return squaredInts
     
