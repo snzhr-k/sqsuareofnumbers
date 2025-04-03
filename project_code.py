@@ -28,12 +28,15 @@ def ReadX(X, intarr): #reads # of integers and line of integers
 
 #Implementation of the feature that calculates the sum of squares of a given list of integers
 def SumOfSquares(arr):
-    return list(map(SquareNumber, arr))
+    squaredInts = list(map(SquareNumber, arr))
+    sumInts = list(map(sum, squaredInts))
+    return sumInts
 
 def SquareNumber(Ints): #Ints is a list of integer elements
     #caluclates sum of squares for one line of integers
     filteredInts = list(filter(lambda x: x>0, Ints)) #filtering neagative numbers
     squaredInts = list(map(lambda x: x*x, filteredInts))
+    squaredInts = list(filter(lambda x: x>0, squaredInts))
 
     return squaredInts
     
@@ -50,12 +53,16 @@ def decodeString(arr):
 
 #Initializing and testing functions
 def main():
-    arr = []
+    test_case_lines = []
     N = int(input())
-    ReadN(N, arr)
-    decoded = decodeString(arr)
-    print(SumOfSquares(decoded))
 
+    ReadN(N, test_case_lines)
+
+    decoded = decodeString(test_case_lines)
+
+    sum_of_squares = SumOfSquares(decoded)
+    
+    print(*sum_of_squares, sep="\n")
 if __name__ == "__main__":
     main()
 
